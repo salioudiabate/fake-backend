@@ -7,7 +7,7 @@ services:
         volumes:
             - ./sources/battleboat:/etc/backend/static 
         environment:
-            DATABASE_HOST: "dbBattleHostname"
+            DATABASE_HOST: "dbBattleContainerName"
             DATABASE_NAME: "battleboat"
             DATABASE_USER: "battleuser"
             DATABASE_PASSWORD: "battlepass"
@@ -26,6 +26,7 @@ services:
         volumes:
             - ./volumes/mysql_lib:/var/lib/mysql
         environment:
+            MYSQL_ROOT_PASSWORD: "rootPassword"
             MYSQL_DATABASE: "battleboat"
             MYSQL_USER: "battleuser"
             MYSQL_PASSWORD: "battlepass"
